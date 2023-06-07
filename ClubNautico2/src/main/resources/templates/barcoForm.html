@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title th:text="${titulo}">Insert title here</title>
+</head>
+<body>
+	<div class="container">
+		<h1 class="text-success" border-bottom-1 th:text="${titulo}"></h1>
+		
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Matrícula</th>
+					<th>Nombre</th>
+					<th>Número de amarre</th>
+					<th>Cuota</th>
+					<th>Capacidad</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each:"barco: ${barcos}">
+					<td th:text="${barco.matricula}"></td>
+					<td th:text="${barco.nombre}"></td>
+					<td th:text="${barco.numAmarre}"></td>
+					<td th:text="${barco.cuota}"></td>
+					<td th:text="${barco.capacidad}"></td>
+					</tr>
+			</tbody>
+
+		</table>
+
+	</div>
+
+</body>
+</html>
